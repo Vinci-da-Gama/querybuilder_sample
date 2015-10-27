@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="aqb">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Angular.js Query Builder</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container" ng-controller="QueryBuilderCtrl">
+    <h1>Angular.js Query Builder</h1>
+
+        <div class="alert alert-info">
+            <strong>Example Output</strong><br>
+            <span ng-bind-html="output"></span>
+        </div>
+
+        <query-builder group="filter.group"></query-builder>
+    </div>
+
+    <!-- <script type="text/ng-template" id="/queryBuilderDirective.html">
+    </script> -->
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-sanitize.min.js"></script>
+    <!-- <script src="angular-query-builder.js"></script> -->
+    <script src="./appjs/app.js"></script>
+    <script src="./appjs/app-ctrl.js"></script>
+    <script src="./appjs/query-builder.js"></script>
+  </body>
+</html>
