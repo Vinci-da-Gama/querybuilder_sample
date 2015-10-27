@@ -3,6 +3,7 @@
 
 	ctrlM.controller('QueryBuilderCtrl', ['$scope', function($scope){
 		var tq = String.fromCharCode(9775)+" - ";
+
 		var data = '{"group": {"operator": "AND","rules": []}}';
 
         function htmlEntities(str) {
@@ -10,8 +11,11 @@
         }
 
         // This function would be called, Add Condition, Add Group and remove Group...
+        // The purpose is about build up the data object.
         function computed(group) {
+
             if (!group) return "";
+
             for (var str = "(", i = 0; i < group.rules.length; i++) {
                 i > 0 && (str += " <strong>" + group.operator + "</strong> ");
                 str += group.rules[i].group ?
@@ -46,10 +50,12 @@
 
         $scope.$watch('filter', function (newValue) {
             // JSON.stringify(the data you want to stringfy, anything you want to replace, how many space between each elements)
+            // $scope.json is updated data object...
             $scope.json = JSON.stringify(newValue, null, 2);
+            // the output is for <span></span> -- Example Output
             $scope.output = computed(newValue.group);
-            console.log(tq+" $scope.json ", $scope.json);
-            console.log(tq+" $scope.output ", $scope.output);
+            /*console.log(tq+" $scope.json ", $scope.json);
+            console.log(tq+" $scope.output ", $scope.output);*/
         }, true);
 
 	}]);
