@@ -18,8 +18,9 @@
             <!-- two-way binding for the html template (js expression)... -->
             <span ng-bind-html="output"></span>
         </div>
-
-        <query-builder group="filter.group"></query-builder>
+        
+        <!-- group will pass filter.group in and out from query-builder directive -->
+        <query-builder group="filter.group" first-fields="myfields"></query-builder>
     </div>
 
     <!-- <script type="text/ng-template" id="/queryBuilderDirective.html">
