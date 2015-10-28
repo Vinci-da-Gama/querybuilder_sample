@@ -54,7 +54,12 @@
                     { name: '>' },
                     { name: '>=' }];
 
-                    console.log("¿¿¿¿¿¿¿¿¿", scope.firstFields);
+                    scope.selectedValue = "Default_Value";
+                    scope.icons = [
+                        {value: "wo"},
+                        {value: "cao"},
+                        {value: "ni"},
+                        {value: "ma"}];
 
                     var u = scope.tmplCollection;
                     scope.addCondition = function () {
