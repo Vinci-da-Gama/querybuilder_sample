@@ -67,11 +67,16 @@
         }, true);
 
         cs.myfields = [
-        { name: 'Firstname', url: './partials/template2.html' },
-        { name: 'Lastname', url: './partials/template2.html' },
-        { name: 'Birthdate', url: './partials/template2.html' },
-        { name: 'City', url: './partials/template1.html' },
-        { name: 'Country', url: './partials/template1.html' }];
+        { name: 'Firstname' },
+        { name: 'Lastname' },
+        { name: 'Birthdate' },
+        { name: 'City' },
+        { name: 'Country' }];
+
+        cs.urlcollection = {
+            url1: "./partials/template1.html",
+            url2: "./partials/template2.html"
+        }
 
 	}]);
 

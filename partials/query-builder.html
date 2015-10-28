@@ -17,11 +17,11 @@
                 </div>
                 <!-- Here is where the real new rules generated. -->
                 <div ng-switch-default="ng-switch-default">
-                    <div class="form-inline">
-                        <select ng-options="t.name as t.name for t in firstFields" ng-model="rule.field" class="form-control input-sm"></select>
+                    <div class="form-inline" style="display: inline-flex;">
+                        <select ng-options="t.name as t.name for t in firstFields" ng-model="rule.field" class="form-control input-sm" ng-change="getResponsiveUrl(rule)"></select>
                         <select style="margin-left: 5px" ng-options="c.name as c.name for c in conditions" ng-model="rule.condition" class="form-control input-sm"></select>
                         <!-- <input style="margin-left: 5px" type="text" ng-model="rule.data" class="form-control input-sm"/> -->
-                        <div ng-include="rule.tmplUrl"></div>
+                        <div ng-include="rule.tmpurl"></div>
                         <button style="margin-left: 5px" ng-click="removeCondition($index)" class="btn btn-sm btn-danger"><span class="glyphicon glyphicon-minus-sign"></span></button>
                     </div>
                 </div>

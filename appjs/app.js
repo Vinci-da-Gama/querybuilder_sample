@@ -1,7 +1,7 @@
 (function () {
 	// var app = 
 	// 'queryBuilder'
-	var angu = ['ngSanitize'];
+	var angu = ['ngSanitize', 'ngAnimate', 'mgcrea.ngStrap'];
 	var ctrl = ['aqb.ctrl'];
 	var qbjs = ['aqb.querybuilder'];
 	var depedencyArr = angu.concat(ctrl, qbjs);

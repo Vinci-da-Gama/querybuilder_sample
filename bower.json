@@ -1,0 +1,12 @@
+{
+  "name": "The Name",
+  "description": "The Description",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "angular-animate": "~1.4.7",
+    "angular-strap": "~2.3.4",
+    "angular-sanitize": "~1.4.7"
+  }
+}

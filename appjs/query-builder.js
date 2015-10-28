@@ -6,7 +6,8 @@
 			// terminal: true,
 			scope: {
 				group: '=',
-                firstFields: '='
+                firstFields: '=',
+                tmplCollection: '='
 			}, // {} = isolate, true = child, false/undefined = no change
 			/*controller: function($scope, $element, $attrs, $transclude) {
                 console.log("The passed in firstField is --> ", $scope.firstField);
@@ -54,6 +55,8 @@
                     { name: '>=' }];
 
                     console.log("¿¿¿¿¿¿¿¿¿", scope.firstFields);
+
+                    var u = scope.tmplCollection;
                     scope.addCondition = function () {
                         // add new condition to rules
                         // the field here will match the content in arr firstFields (Lastname === Lastname),
@@ -63,26 +66,35 @@
                             condition: '=',
                             field: 'Firstname',
                             data: '',
-                            tmplUrl: ''
+                            tmpurl: u.url2
                         });
                         // console.log(tq+'the condiiton is :--> ', scope.group.rules);
                         console.log('one example --> '+tq+" -Due to the group has been built, the computed would be executed to form the rules data to group Obj...");
                         console.log('the pass in group is --> ', scope.group);
 
                         // pickupTemplateForLastField (scope.group.rules[0].field);
-                        pickupTemplateForLastField (scope.group.rules);
+                        // pickupTemplateForLastField (scope.group.rules);
+                        
                     };
 
-                    function pickupTemplateForLastField (theRulesArr) {
-                        console.log(tq+'˘¿˘˘˘˘˘¿¿¿ theRulesArr is --> ', theRulesArr);
-                        theRulesArr.forEach(function (elem, index) {
-                            if (elem.field === 'Firstname') {
-                                elem.templateUrl = './partials/template2.html';
-                            } else{
-                                elem.templateUrl = './partials/template1.html';
-                            };
-                        });
+                    // This is for select and change Templates
+                    scope.getResponsiveUrl = function (ru) {
+                        /*var sgr = scope.group.rules;
+                        console.log('The index of current rule --> '+tq, ru);
+                        console.log('...........cao...........');
+                        var i = sgr.indexOf(ru);
+                        console.log(tq+' the index is : '+i);*/
+                        console.log('ru.field --> '+ru.field);
+                        if (ru.field === 'Firstname') {
+                            ru.tmpurl = u.url2;
+                            console.log('url2 -- ru.tmpurl --> '+ru.tmpurl);
+                        } else{
+                            
+                            ru.tmpurl = u.url1;
+                            console.log('url1 -- ru.tmpurl --> '+ru.tmpurl);
+                        };
                     };
+                    // This is for select and change Templates
 
                     scope.removeCondition = function (index) {
                         // remove the pointed rule
